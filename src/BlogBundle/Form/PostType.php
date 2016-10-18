@@ -5,6 +5,7 @@ namespace BlogBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType as DateTimeType;
 
 class PostType extends AbstractType
 {
@@ -18,11 +19,11 @@ class PostType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('excerpt')
-            ->add('createdAt', 'datetime')
-            ->add('updatedAt', 'datetime')
+            ->add('createdAt', DateTimeType::class)
+            ->add('updatedAt', DateTimeType::class)
         ;
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */
